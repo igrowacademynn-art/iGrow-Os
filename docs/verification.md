@@ -20,17 +20,25 @@ The actual latest E2E run is recorded in `test-results.json`. All test credentia
 | Production branch | `br-spring-bird-b3gop6sh` | Initial migration applied; no operational records or owner account |
 | Test branch | `br-twilight-sun-b3rq1l3n` | `implementation-tests`, migration verified, no operational records |
 | GitHub | `igrowacademynn-art/iGrow-Os` | Dedicated repository supplied by owner; source uploaded |
-| Render | Workspace `iGrow` (`tea-dba71gjbc2fs73aa7skg`) | Service creation blocked pending explicit confirmation of this workspace |
+| Render | Workspace `iGrow` (`tea-dba71gjbc2fs73aa7skg`) | Confirmed by owner; free web service srv-dbbiaouq1p3s73cngaig is live |
 
 SHA OS and its resources were not modified. No paid plan was purchased.
 
 ## Production acceptance
 
-The user supplied the dedicated repository and authorised workspace selection and the production migration on 20 October 2026. That resolved the schema and repository prerequisites. Render service creation was subsequently rejected by automatic approval review because the earlier “Different workspace” selection conflicts with choosing the visible iGrow workspace without naming it explicitly. No Render service was created; explicit confirmation of the exact workspace is required.
+The owner supplied the dedicated repository, authorised the initial production migration, and explicitly confirmed the Render workspace named iGrow under igrowacademy.nn@gmail.com. All earlier approval blockers were resolved.
 
-Render deployment and public HTTP checks are recorded in `deployment-status.json` when completed. Owner setup remains private and must be completed by the owner with a password of their choice. No test owner or default password is created in production. The full local restart/login suite passed, but production authenticated persistence cannot be certified before the owner claims their account. Keep real operational testing outside production unless authorised by the owner.
+Deployment `dep-dbbiapeq1p3s73cngcfg` reached **live** on the free Render service `srv-dbbiaouq1p3s73cngaig` in Singapore. The deployed app connects to the separate Neon production branch. Public HTTPS checks passed:
 
-The local environment cannot directly resolve the Neon host (`EAI_AGAIN`); connector-based schema checks work. Deployment acceptance must verify connectivity from Render itself.
+- `/`: 200 and compiled React assets served.
+- `/api/health`: 200, `status: ok`, timezone Asia/Kolkata.
+- `/api/setup-status`: 200, `required: true`.
+- `/api/records`: 401 without a session.
+- Chromium: the one-time owner setup page rendered with its private token field and zero JavaScript page errors.
+
+Read-only production database checks confirmed no accounts or operational records were created during deployment. The migration record persists in Neon. No default owner credentials or demo records were seeded. `docs/deployment-status.json` records the deployed source commit and checks.
+
+The full local restart/login suite passed. Authenticated **production** persistence is still pending the owner claiming the account and entering their own data, so this is not represented as tested. Follow `docs/owner-setup.md` to complete private setup, then check refresh and fresh-login behaviour. The direct-creation tool used Render's default TCP readiness check; the HTTP `/api/health` endpoint was separately verified.
 
 ## Known limits
 

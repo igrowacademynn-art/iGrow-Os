@@ -4,11 +4,17 @@ TypeScript + React + Express + PostgreSQL application for iGrow, Nanganallur, Ch
 
 ## Release status
 
+Live application: https://igrow-learning-centre-os.onrender.com
+
 Repository: https://github.com/igrowacademynn-art/iGrow-Os
 
-The initial production migration has been applied to the separate iGrow Neon project with owner approval. Render service creation was blocked by automatic approval review because the earlier selection was “Different workspace”; explicit confirmation to use the visible iGrow Render workspace is still needed. No Render service or public application URL exists yet. This source includes the tested workflows, versioned schema and deployment configuration; see `docs/verification.md` for actual test evidence and remaining production acceptance checks.
+Deployed on the free Render service in the confirmed iGrow workspace, with the separate iGrow Neon production database. Public HTTP checks passed: app and health return 200, setup is required, and operational records return 401 without login. The owner setup page was verified in Chromium with no JavaScript errors.
 
-SHA OS is unrelated and is not modified. No operational demo data or default login is seeded in production. Complete the private one-time owner setup after deployment.
+**First step:** Follow [docs/owner-setup.md](docs/owner-setup.md) to claim the owner account using the private `BOOTSTRAP_TOKEN` in Render. There are no default credentials. Production has no accounts or operational records before that setup.
+
+All six unit tests and the eight requested local E2E scenarios passed. Authenticated production refresh/login verification remains pending the owner's private setup. See `docs/verification.md` and `docs/deployment-status.json` for scope and limitations.
+
+SHA OS was not changed. No paid resources were purchased.
 
 ## Local setup
 

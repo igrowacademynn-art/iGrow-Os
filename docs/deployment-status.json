@@ -1,16 +1,39 @@
 {
   "repository": "https://github.com/igrowacademynn-art/iGrow-Os",
-  "sourceCommit": "3181d528c845361ee1dc83a83aaa5af4eb512700",
+  "deployedSourceCommit": "0a8dfe8b18d40a292e3e9ce916c1207462eb2f50",
+  "publicUrl": "https://igrow-learning-centre-os.onrender.com",
+  "renderServiceId": "srv-dbbiaouq1p3s73cngaig",
+  "renderWorkspaceId": "tea-dba71gjbc2fs73aa7skg",
+  "renderWorkspaceName": "iGrow",
+  "renderPlan": "free",
+  "renderRegion": "singapore",
+  "deployId": "dep-dbbiapeq1p3s73cngcfg",
+  "deployStatus": "live",
   "productionSchema": "001_core.sql applied",
-  "productionAccounts": 0,
-  "productionOperationalRecords": 0,
-  "renderServiceCreated": false,
-  "publicUrl": null,
-  "blocker": "Automatic approval review requires explicit confirmation of Render workspace iGrow (tea-dba71gjbc2fs73aa7skg), because the user earlier selected Different workspace. No credentials were sent to a created service.",
+  "productionAccountsBeforeOwnerSetup": 0,
+  "productionOperationalRecordsBeforeOwnerSetup": 0,
+  "verifiedAt": "2026-10-20T08:27:30.498855+00:00",
+  "publicChecks": {
+    "GET /": 200,
+    "GET /api/health": {
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "timezone": "Asia/Kolkata"
+      }
+    },
+    "GET /api/setup-status": {
+      "status": 200,
+      "body": {
+        "required": true
+      }
+    },
+    "GET /api/records": 401,
+    "chromiumOwnerSetupPage": "rendered; token field present; no JavaScript errors"
+  },
+  "healthCheckConfiguration": "Render MCP creation uses default TCP check; /api/health was separately verified over HTTPS. render.yaml declares the desired HTTP check for a future Blueprint-managed setup.",
   "pending": [
-    "Confirm exact Render workspace",
-    "Create free web service and inject private credentials",
-    "Monitor deployment and verify public health",
-    "Owner completes private account setup; authenticated production persistence verification follows"
+    "Owner completes private account setup using Render BOOTSTRAP_TOKEN",
+    "Authenticated production refresh/login persistence check after owner setup"
   ]
 }

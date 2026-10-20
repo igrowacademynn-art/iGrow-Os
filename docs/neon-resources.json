@@ -6,6 +6,8 @@
   "productionMigrationStatus": "001_core.sql applied",
   "testBranchId": "br-twilight-sun-b3rq1l3n",
   "testMigrationStatus": "001_core.sql verified",
-  "renderWorkspaceStatus": "blocked_pending_explicit_confirmation_of_iGrow_workspace_tea-dba71gjbc2fs73aa7skg",
-  "githubRepositoryStatus": "https://github.com/igrowacademynn-art/iGrow-Os"
+  "renderWorkspaceStatus": "confirmed_iGrow_tea-dba71gjbc2fs73aa7skg",
+  "githubRepositoryStatus": "https://github.com/igrowacademynn-art/iGrow-Os",
+  "renderServiceId": "srv-dbbiaouq1p3s73cngaig",
+  "publicUrl": "https://igrow-learning-centre-os.onrender.com"
 }
