@@ -1,0 +1,11 @@
+{
+  "projectId": "shiny-dew-84867995",
+  "region": "aws-ap-southeast-1",
+  "databaseName": "igrow",
+  "productionBranchId": "br-spring-bird-b3gop6sh",
+  "productionMigrationStatus": "001_core.sql applied",
+  "testBranchId": "br-twilight-sun-b3rq1l3n",
+  "testMigrationStatus": "001_core.sql verified",
+  "renderWorkspaceStatus": "iGrow: tea-dba71gjbc2fs73aa7skg",
+  "githubRepositoryStatus": "https://github.com/igrowacademynn-art/iGrow-Os"
+}

@@ -1,0 +1,50 @@
+{
+  "environment": "Isolated local PostgreSQL WASM (PGlite); not a production deployment",
+  "runAt": "2026-10-20T08:08:32.271Z",
+  "results": [
+    {
+      "scenario": "1. Enquiry → family / guardian / child → multiple enrolments; duplicate conversion blocked",
+      "status": "PASS"
+    },
+    {
+      "scenario": "2. Class attendance → daycare handover stays inside → only authorised family pickup",
+      "status": "PASS"
+    },
+    {
+      "scenario": "3. Partial payment → outstanding → full settlement; numbered receipt and idempotent retry",
+      "status": "PASS"
+    },
+    {
+      "scenario": "4. ₹600 material sale → ₹400 collection → ₹200 balance → delivery decrements stock",
+      "status": "PASS"
+    },
+    {
+      "scenario": "5. Event registration → linked charge / collection → expense → ₹150 cash surplus",
+      "status": "PASS"
+    },
+    {
+      "scenario": "6. CSV preview → default centre → save → export; duplicate and invalid rows flagged",
+      "status": "PASS"
+    },
+    {
+      "scenario": "7. Parent cannot list, fetch, download, mutate or see internal data outside permitted family scope",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Additional safeguards: refunds, charge credits, deposit isolation, overdelivery, stale edits and CSRF origin",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Additional workflows: distinct outside-customer identities and family-scoped parent consent responses",
+      "status": "PASS"
+    },
+    {
+      "scenario": "Browser: desktop and mobile login, dashboard, billing and enquiry pipeline render without JS errors or horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "scenario": "8. Local database records survive server restart, logout and fresh login; audit retained",
+      "status": "PASS"
+    }
+  ]
+}

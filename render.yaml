@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: igrow-learning-centre-os
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24
+      - key: TZ
+        value: Asia/Kolkata
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_UNPOOLED
+        sync: false
+      - key: APP_ORIGIN
+        sync: false
+      - key: BOOTSTRAP_TOKEN
+        generateValue: true

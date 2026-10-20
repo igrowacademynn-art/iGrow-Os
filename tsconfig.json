@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2023","module":"ESNext","moduleResolution":"bundler","allowImportingTsExtensions":true,"jsx":"react-jsx","strict":true,"esModuleInterop":true,"skipLibCheck":true,"types":["node","vite/client"],"noEmit":true},"include":["client","server","shared","tests","vite.config.ts"]}
