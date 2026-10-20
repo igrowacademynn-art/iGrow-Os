@@ -6,6 +6,6 @@
   "productionMigrationStatus": "001_core.sql applied",
   "testBranchId": "br-twilight-sun-b3rq1l3n",
   "testMigrationStatus": "001_core.sql verified",
-  "renderWorkspaceStatus": "iGrow: tea-dba71gjbc2fs73aa7skg",
+  "renderWorkspaceStatus": "blocked_pending_explicit_confirmation_of_iGrow_workspace_tea-dba71gjbc2fs73aa7skg",
   "githubRepositoryStatus": "https://github.com/igrowacademynn-art/iGrow-Os"
 }

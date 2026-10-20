@@ -6,7 +6,7 @@ TypeScript + React + Express + PostgreSQL application for iGrow, Nanganallur, Ch
 
 Repository: https://github.com/igrowacademynn-art/iGrow-Os
 
-Production deployment is being configured in the connected iGrow Render workspace with the separate iGrow Neon project. The owner has authorised the initial production migration. This source includes the tested workflows, versioned schema and deployment configuration; see `docs/verification.md` for actual test evidence and remaining production acceptance checks.
+The initial production migration has been applied to the separate iGrow Neon project with owner approval. Render service creation was blocked by automatic approval review because the earlier selection was “Different workspace”; explicit confirmation to use the visible iGrow Render workspace is still needed. No Render service or public application URL exists yet. This source includes the tested workflows, versioned schema and deployment configuration; see `docs/verification.md` for actual test evidence and remaining production acceptance checks.
 
 SHA OS is unrelated and is not modified. No operational demo data or default login is seeded in production. Complete the private one-time owner setup after deployment.
 

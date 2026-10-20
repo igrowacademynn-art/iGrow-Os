@@ -20,13 +20,13 @@ The actual latest E2E run is recorded in `test-results.json`. All test credentia
 | Production branch | `br-spring-bird-b3gop6sh` | Initial migration applied; no operational records or owner account |
 | Test branch | `br-twilight-sun-b3rq1l3n` | `implementation-tests`, migration verified, no operational records |
 | GitHub | `igrowacademynn-art/iGrow-Os` | Dedicated repository supplied by owner; source uploaded |
-| Render | Workspace `iGrow` (`tea-dba71gjbc2fs73aa7skg`) | Owner authorised workspace selection; deployment in progress |
+| Render | Workspace `iGrow` (`tea-dba71gjbc2fs73aa7skg`) | Service creation blocked pending explicit confirmation of this workspace |
 
 SHA OS and its resources were not modified. No paid plan was purchased.
 
 ## Production acceptance
 
-The user supplied the dedicated repository and authorised workspace selection and the production migration on 20 October 2026. That resolves the earlier automatic-review block and repository/workspace prerequisites.
+The user supplied the dedicated repository and authorised workspace selection and the production migration on 20 October 2026. That resolved the schema and repository prerequisites. Render service creation was subsequently rejected by automatic approval review because the earlier “Different workspace” selection conflicts with choosing the visible iGrow workspace without naming it explicitly. No Render service was created; explicit confirmation of the exact workspace is required.
 
 Render deployment and public HTTP checks are recorded in `deployment-status.json` when completed. Owner setup remains private and must be completed by the owner with a password of their choice. No test owner or default password is created in production. The full local restart/login suite passed, but production authenticated persistence cannot be certified before the owner claims their account. Keep real operational testing outside production unless authorised by the owner.
 
