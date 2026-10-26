@@ -16,6 +16,7 @@ const eventSchema=z.object({
  purpose:short,
  summary:z.string().trim().min(3).max(3000),
  reply:optionalNote,
+ occurredAt:z.iso.datetime().optional(),
  status:z.enum(['completed','no-answer','waiting','follow-up','escalated']),
  nextAction:optionalNote,
  followupDate:date.optional(),
