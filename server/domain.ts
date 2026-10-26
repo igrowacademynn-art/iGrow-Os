@@ -7,6 +7,7 @@ export function paisa(v:number){if(!Number.isFinite(v)||Math.abs(v*100-Math.roun
 export const scopeFamily=(r:Row,rows:Row[])=>r.kind==='families'?r.id:r.data.familyId||rows.find(x=>x.id===r.data.studentId)?.data.familyId;
 export function permittedRows(rows:Row[],u:User){
  if(u.role==='admin')return rows;
+ if(u.role==='helper')return []; // Helpers only access their own operations via the scoped API.
  if(u.role==='parent')return rows.filter(r=>{
  if(r.kind==='allocations'){const p=rows.find(p=>p.id===r.data.paymentId);return p?.data.familyId===u.family_id;}
  if(!modules[r.kind]?.parent)return false;
