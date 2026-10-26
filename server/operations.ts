@@ -64,6 +64,18 @@ export function attachOperations(app:Express){
   const result=await transaction(db=>insert(db,'ops_events',{...d,actorId:u.id,actorName:u.name,date:today(),recordedAt:new Date().toISOString()},u.id));
   res.status(201).json(result);
  });
+ app.post('/api/operations/events/:id/resolve',async(req,res)=>{
+  role(req,operators);
+  const d=z.object({resolution:z.string().trim().min(3).max(3000)}).strict().parse(req.body);
+  const u=req.user!;
+  const result=await transaction(async db=>{
+   const event=await get(db,z.uuid().parse(req.params.id),'ops_events');
+   if(u.role!=='admin'&&event.data.actorId!==u.id)throw new Error('You can resolve only your own interactions.');
+   if(event.data.status==='completed'||event.data.resolvedAt)throw new Error('This interaction is already resolved.');
+   return replace(db,event,{...event.data,resolvedAt:new Date().toISOString(),resolvedBy:u.id,resolution:d.resolution},u.id,'Follow-up resolved: '+d.resolution.slice(0,250));
+  });
+  res.json(result);
+ });
  app.post('/api/operations/tasks',async(req,res)=>{
   role(req,['admin']);const d=taskSchema.parse(req.body);const u=req.user!;
   const assignee=(await pool.query("SELECT id,name FROM users WHERE id=$1 AND active=true AND role IN ('admin','frontdesk','teacher','helper')",[d.assigneeId])).rows[0];
