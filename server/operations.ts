@@ -90,6 +90,7 @@ export function attachOperations(app:Express){
    if(t.version!==d.version)throw new Error('This task changed. Refresh and try again.');
    const admin=u.role==='admin';
    if(!admin&&t.data.assigneeId!==u.id)throw new Error('This task is not assigned to you.');
+   if(!admin&&t.data.status==='verified')throw new Error('A verified task cannot be changed by staff. Ask the owner to reopen it.');
    if(d.status==='verified'&&!admin)throw new Error('Only the owner can verify completion.');
    if(d.status==='verified'&&t.data.status!=='submitted')throw new Error('Staff must submit the task before verification.');
    if(!admin&&['open','verified'].includes(d.status))throw new Error('Only the owner can reopen or verify tasks.');
