@@ -90,11 +90,11 @@ export function attachOperations(app:Express){
    const t=await get(db,z.uuid().parse(req.params.id),'ops_tasks');
    if(t.version!==d.version)throw new Error('This task changed. Refresh and try again.');
    const admin=u.role==='admin';
-   if(!admin&&t.data.assigneeId!==u.id)throw new Error('This task is not assigned to you.');
+   if(!admin&&t.data.assigneeId!==u.id)throw Object.assign(new Error('This task is not assigned to you.'),{status:403});
    if(!admin&&t.data.status==='verified')throw new Error('A verified task cannot be changed by staff. Ask the owner to reopen it.');
-   if(d.status==='verified'&&!admin)throw new Error('Only the owner can verify completion.');
+   if(d.status==='verified'&&!admin)throw Object.assign(new Error('Only the owner can verify completion.'),{status:403});
    if(d.status==='verified'&&t.data.status!=='submitted')throw new Error('Staff must submit the task before verification.');
-   if(!admin&&['open','verified'].includes(d.status))throw new Error('Only the owner can reopen or verify tasks.');
+   if(!admin&&['open','verified'].includes(d.status))throw Object.assign(new Error('Only the owner can reopen or verify tasks.'),{status:403});
    if(d.status==='blocked'||d.status==='submitted')if(d.note.length<3)throw new Error('Explain what happened before changing this status.');
    return replace(db,t,{...t.data,status:d.status,lastNote:d.note,statusAt:new Date().toISOString(),updatedBy:u.id,reviewedBy:d.status==='verified'?u.id:null},u.id,'Task status: '+d.status);
   });
