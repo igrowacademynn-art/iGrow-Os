@@ -17,3 +17,5 @@
 }
 @media(max-width:600px){#site-nav{top:71px}.language-select-wrap{margin-left:auto}.site-header .nav-inner{justify-content:space-between}}
 .hero h1,.section-head h2,.practice-intro h2,.product-text h2,.pilot-section h2,.request-copy h2,.faq-grid h2,.closing h2{overflow-wrap:break-word}
+
+.request-copy .locale-beta-note{background:#e8f1eb;color:#34564a;border-left-color:#1b8b62;border-radius:0 8px 8px 0}
