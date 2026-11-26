@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://karate-masters-os-website.onrender.com/sitemap.xml

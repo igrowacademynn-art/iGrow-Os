@@ -1,1 +1,0 @@
-Isolated Karate Masters OS public marketing website. This branch must not modify iGrow-Os main or the existing MastersCorner domain.
